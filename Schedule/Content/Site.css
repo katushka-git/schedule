@@ -3,20 +3,20 @@
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
+/* Установите отступы, чтобы контент не касался краев */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
+/* Переопределить поведение начальной загрузки по умолчанию, когда горизонтальные списки описаний
+   будет обрезать термины, которые слишком длинные, чтобы поместиться в левом столбце
 */
 .dl-horizontal dt {
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
+/* Установите ширину элементов ввода формы, поскольку по умолчанию они имеют ширину 100%. */
 input,
 select,
 textarea {

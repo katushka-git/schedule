@@ -13,17 +13,23 @@
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar">1</span>
+                    <span class="icon-bar">2</span>
+                    <span class="icon-bar">23</span>
                 </button>
                 @Html.ActionLink("Расписание", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Домашняя страница", "In", "Home")</li>
                     <li>@Html.ActionLink("О программе", "About", "Home")</li>
-                    <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Дни недели", "Index", "Days")</li>
+                    <li>@Html.ActionLink("Группы", "Index", "Groups")</li>
+                    <li>@Html.ActionLink("Пары", "Index", "Paras")</li>
+                    <li>@Html.ActionLink("Аудитории", "Index", "Rooms")</li>
+                    <li>@Html.ActionLink("Предметы", "Index", "Subjects")</li>
+                    <li>@Html.ActionLink("Преподаватели", "Index", "Teachers")</li>
+                   
+
                 </ul>
             </div>
         </div>

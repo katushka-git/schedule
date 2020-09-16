@@ -1,0 +1,49 @@
+﻿@using Schedule.Models
+@model PriceViewModel
+
+@{
+    string strTitle = "Таблицы с результатом";
+    ViewBag.Title = strTitle;
+    //Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<h2>@strTitle</h2>
+
+<div>
+    @($"Ошибок при импорте: {Model.ErrorsTotal}")
+    <div>
+        @foreach (PhoneBrand phoneBrand in Model.PhoneBrands)
+        {
+            int pricePositionsCounter = 0;
+            <h3>
+                 @phoneBrand.Title
+            </h3>
+            <table class="table table-bordered table-hover table-striped table-condensed">
+                <thead>
+                    <tr class="table-info">
+                        <th>Учебный план</th>
+                        @foreach (PhoneModel phoneModel in phoneBrand.PhoneModels)
+                        {
+                            <th>@phoneModel.Title</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (PricePosition pricePosition in phoneBrand.PhoneModels[0].PricePositions)
+                    {
+                        <tr>
+                            <td>
+                                @pricePosition.Problem
+                            </td>
+                            @foreach (PhoneModel phoneModel in phoneBrand.PhoneModels)
+                            {
+                                <td>@phoneModel.PricePositions[pricePositionsCounter].Price</td>
+                            }
+                        </tr>
+                        pricePositionsCounter++;
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

@@ -11,6 +11,5 @@ namespace Schedule.Models
         public string Specialty { get; set; }
         public string Number { get; set; }
         public int CountStudents { get; set; }
-        public ICollection<Shedule> Schedules { get; set; }
     }
 }

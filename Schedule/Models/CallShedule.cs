@@ -11,6 +11,5 @@ namespace Schedule.Models
         public int NamberPar { get; set; }
         public int Start { get; set; }
         public int Finish { get; set; }
-        public ICollection <Shedule> Schedules { get; set; }
     }
 }

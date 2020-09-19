@@ -11,6 +11,5 @@ namespace Schedule.Models
         public int Number { get; set; }
         //вместимость 
         public int Capacity { get; set; }
-        public ICollection<Shedule> Schedules { get; set; }
     }
 }

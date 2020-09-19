@@ -161,7 +161,6 @@
     <Compile Include="Models\Para.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\ScheduleContex.cs" />
-    <Compile Include="Models\Shedule.cs" />
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Models\ViewModels.cs" />

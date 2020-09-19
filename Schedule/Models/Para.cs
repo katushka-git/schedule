@@ -9,6 +9,7 @@ namespace Schedule.Models
     {
         public int Id { get; set; }
         public int Number { get; set; }
-        public int DaysId { get; set; } 
+        public int DaysId { get; set; }
+        public ICollection<Shedule> Schedules { get; set; }
     }
 }

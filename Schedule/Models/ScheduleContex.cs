@@ -15,6 +15,7 @@ namespace Schedule.Models
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Room> Rooms{ get; set; }
         public DbSet<Group> Groups { get; set; }
+        public DbSet <Shedule> Shedules { get; set; }
        
     }
 }

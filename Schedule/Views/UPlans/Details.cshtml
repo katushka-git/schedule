@@ -1,90 +1,82 @@
 ﻿@model Schedule.Models.UPlan
 
 @{
-    Layout = null;
+    ViewBag.Title = "Details";
 }
 
-<!DOCTYPE html>
+<h2>Details</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-    <div>
-        <h4>UPlan</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.SubjectId)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.SubjectId)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Lecture)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Lecture)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Control)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Control)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Practical)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Practical)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Coursework)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Coursework)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Exam)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Exam)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Consultation)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Consultation)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Total)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Total)
-            </dd>
-    
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-</body>
-</html>
+<div>
+    <h4>UPlan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SubjectId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubjectId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lecture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lecture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Control)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Control)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Practical)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Practical)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Coursework)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Coursework)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Consultation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Consultation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

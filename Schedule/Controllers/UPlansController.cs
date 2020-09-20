@@ -38,6 +38,7 @@ namespace Schedule.Controllers
         // GET: UPlans/Create
         public ActionResult Create()
         {
+            ViewBag.SubjectId = new SelectList(db.Subjects, "Id", "Name");
             return View();
         }
 
@@ -54,7 +55,7 @@ namespace Schedule.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.SubjectId= new SelectList(db.Subjects, "Id", "Name", uPlan.SubjectId);
             return View(uPlan);
         }
 

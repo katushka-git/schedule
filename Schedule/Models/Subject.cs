@@ -9,5 +9,7 @@ namespace Schedule.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public int? UPlanId { get; set; }
+        public UPlan UPlan { get; set; }
     }
 }

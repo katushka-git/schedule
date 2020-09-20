@@ -16,5 +16,10 @@ namespace Schedule.Models
         public int Exam { get; set; }
         public int Consultation { get; set; }
         public int Total { get; set; }
+        public IEnumerable<Subject> Subjects { get; set; }
+        public UPlan()
+        {
+            Subjects = new List<Subject>();
+        }
     }
 }

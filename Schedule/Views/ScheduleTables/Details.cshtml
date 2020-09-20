@@ -1,0 +1,74 @@
+﻿@model Schedule.Models.ScheduleTable
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>ScheduleTable</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CallSheduleId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CallSheduleId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ParaId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ParaId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.RoomId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.RoomId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SubjectId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SubjectId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.GroupId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.GroupId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TeacherId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TeacherId)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

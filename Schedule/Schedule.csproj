@@ -144,6 +144,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ParasController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
+    <Compile Include="Controllers\ScheduleTablesController.cs" />
     <Compile Include="Controllers\SubjectsController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Controllers\UPlansController.cs" />
@@ -158,6 +159,14 @@
     <Compile Include="Migrations\202009200619177_m1.designer.cs">
       <DependentUpon>202009200619177_m1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009200631375_m2.cs" />
+    <Compile Include="Migrations\202009200631375_m2.designer.cs">
+      <DependentUpon>202009200631375_m2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009200636503_m3.cs" />
+    <Compile Include="Migrations\202009200636503_m3.designer.cs">
+      <DependentUpon>202009200636503_m3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CallShedule.cs" />
     <Compile Include="Models\Day.cs" />
@@ -165,6 +174,7 @@
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\Para.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\ScheduleContex.cs" />
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\Teacher.cs" />
@@ -346,6 +356,11 @@
     <Content Include="Views\UPlans\Details.cshtml" />
     <Content Include="Views\UPlans\Edit.cshtml" />
     <Content Include="Views\UPlans\Index.cshtml" />
+    <Content Include="Views\ScheduleTables\Create.cshtml" />
+    <Content Include="Views\ScheduleTables\Delete.cshtml" />
+    <Content Include="Views\ScheduleTables\Details.cshtml" />
+    <Content Include="Views\ScheduleTables\Edit.cshtml" />
+    <Content Include="Views\ScheduleTables\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -367,6 +382,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009200619177_m1.resx">
       <DependentUpon>202009200619177_m1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009200631375_m2.resx">
+      <DependentUpon>202009200631375_m2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009200636503_m3.resx">
+      <DependentUpon>202009200636503_m3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

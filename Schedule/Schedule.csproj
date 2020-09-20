@@ -146,12 +146,17 @@
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\SubjectsController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
+    <Compile Include="Controllers\UPlansController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202008061136233_start.cs" />
     <Compile Include="Migrations\202008061136233_start.designer.cs">
       <DependentUpon>202008061136233_start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009200619177_m1.cs" />
+    <Compile Include="Migrations\202009200619177_m1.designer.cs">
+      <DependentUpon>202009200619177_m1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CallShedule.cs" />
@@ -163,6 +168,7 @@
     <Compile Include="Models\ScheduleContex.cs" />
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\Teacher.cs" />
+    <Compile Include="Models\UPlan.cs" />
     <Compile Include="Models\ViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -335,6 +341,11 @@
     <Content Include="Views\Teachers\Details.cshtml" />
     <Content Include="Views\Teachers\Edit.cshtml" />
     <Content Include="Views\Teachers\Index.cshtml" />
+    <Content Include="Views\UPlans\Create.cshtml" />
+    <Content Include="Views\UPlans\Delete.cshtml" />
+    <Content Include="Views\UPlans\Details.cshtml" />
+    <Content Include="Views\UPlans\Edit.cshtml" />
+    <Content Include="Views\UPlans\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -353,6 +364,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202008061136233_start.resx">
       <DependentUpon>202008061136233_start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009200619177_m1.resx">
+      <DependentUpon>202009200619177_m1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

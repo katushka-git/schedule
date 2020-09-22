@@ -17,6 +17,7 @@ namespace Schedule.Controllers
         // GET: ScheduleTables
         public ActionResult Index()
         {
+            var shed = db.ScheduleTables.Include(x => x.CallShedule).Include(x => x.Para).Include(x => x.Room).Include(x => x.Subject).Include(x => x.Group).Include(x => x.Teacher);
             return View(db.ScheduleTables.ToList());
         }
 

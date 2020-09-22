@@ -139,7 +139,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CallShedulesController.cs" />
     <Compile Include="Controllers\DaysController.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ParasController.cs" />
@@ -171,14 +173,40 @@
     <Compile Include="Migrations\202009200701543_m4.designer.cs">
       <DependentUpon>202009200701543_m4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009201425223_m5.cs" />
+    <Compile Include="Migrations\202009201425223_m5.designer.cs">
+      <DependentUpon>202009201425223_m5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009201430559_m6.cs" />
+    <Compile Include="Migrations\202009201430559_m6.designer.cs">
+      <DependentUpon>202009201430559_m6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009201526324_m7.cs" />
+    <Compile Include="Migrations\202009201526324_m7.designer.cs">
+      <DependentUpon>202009201526324_m7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009201635254_m8.cs" />
+    <Compile Include="Migrations\202009201635254_m8.designer.cs">
+      <DependentUpon>202009201635254_m8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009201646054_m9.cs" />
+    <Compile Include="Migrations\202009201646054_m9.designer.cs">
+      <DependentUpon>202009201646054_m9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009201741341_m10.cs" />
+    <Compile Include="Migrations\202009201741341_m10.designer.cs">
+      <DependentUpon>202009201741341_m10.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CallShedule.cs" />
     <Compile Include="Models\Day.cs" />
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\DomainModels.cs" />
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\Para.cs" />
+    <Compile Include="Models\Position.cs" />
     <Compile Include="Models\Room.cs" />
-    <Compile Include="Models\Schedule.cs" />
+    <Compile Include="Models\ScheduleTable.cs" />
     <Compile Include="Models\ScheduleContex.cs" />
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\Teacher.cs" />
@@ -365,6 +393,16 @@
     <Content Include="Views\UPlans\Details.cshtml" />
     <Content Include="Views\UPlans\Edit.cshtml" />
     <Content Include="Views\UPlans\Index.cshtml" />
+    <Content Include="Views\Departments\Create.cshtml" />
+    <Content Include="Views\Departments\Delete.cshtml" />
+    <Content Include="Views\Departments\Details.cshtml" />
+    <Content Include="Views\Departments\Edit.cshtml" />
+    <Content Include="Views\Departments\Index.cshtml" />
+    <Content Include="Views\CallShedules\Create.cshtml" />
+    <Content Include="Views\CallShedules\Delete.cshtml" />
+    <Content Include="Views\CallShedules\Details.cshtml" />
+    <Content Include="Views\CallShedules\Edit.cshtml" />
+    <Content Include="Views\CallShedules\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -395,6 +433,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009200701543_m4.resx">
       <DependentUpon>202009200701543_m4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009201425223_m5.resx">
+      <DependentUpon>202009201425223_m5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009201430559_m6.resx">
+      <DependentUpon>202009201430559_m6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009201526324_m7.resx">
+      <DependentUpon>202009201526324_m7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009201635254_m8.resx">
+      <DependentUpon>202009201635254_m8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009201646054_m9.resx">
+      <DependentUpon>202009201646054_m9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009201741341_m10.resx">
+      <DependentUpon>202009201741341_m10.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

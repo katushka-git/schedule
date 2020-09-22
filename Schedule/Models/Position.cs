@@ -5,14 +5,14 @@ using System.Web;
 
 namespace Schedule.Models
 {
-    public class Day
+    public class Position
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public IEnumerable<Para> Paras { get; set; }
-        public Day ()
+        public IEnumerable<Teacher> Teachers { get; set; }
+        public Position()
         {
-            Paras = new List<Para>();
+            Teachers = new List<Teacher>();
         }
     }
 }

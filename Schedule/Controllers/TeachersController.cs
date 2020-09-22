@@ -17,6 +17,7 @@ namespace Schedule.Controllers
         // GET: Teachers
         public ActionResult Index()
         {
+            //var tea = db.Teachers.Include(x=>x.Subjects);
             return View(db.Teachers.ToList());
         }
 
@@ -38,6 +39,9 @@ namespace Schedule.Controllers
         // GET: Teachers/Create
         public ActionResult Create()
         {
+            ViewBag.SubjectId = new SelectList(db.Subjects, "Id", "Name");
+            ViewBag.PosistionId = new SelectList(db.Positions, "Id", "Name");
+            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name");
             return View();
         }
 
@@ -54,7 +58,9 @@ namespace Schedule.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.SubjectId = new SelectList(db.Subjects, "Id", "Name", teacher.SubjectId);
+            ViewBag.PosistionId = new SelectList(db.Positions, "Id", "Name", teacher.PositionId);
+            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name", teacher.DepartmentId);
             return View(teacher);
         }
 
@@ -70,6 +76,9 @@ namespace Schedule.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.SubjectId = new SelectList(db.Subjects, "Id", "Name");
+            ViewBag.PosistionId = new SelectList(db.Positions, "Id", "Name");
+            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name");
             return View(teacher);
         }
 
@@ -86,6 +95,9 @@ namespace Schedule.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.SubjectId = new SelectList(db.Subjects, "Id", "Name", teacher.SubjectId);
+            ViewBag.PosistionId = new SelectList(db.Positions, "Id", "Name", teacher.PositionId);
+            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name", teacher.DepartmentId);
             return View(teacher);
         }
 

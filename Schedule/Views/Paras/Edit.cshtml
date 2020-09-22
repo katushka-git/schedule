@@ -24,7 +24,7 @@
         <div class="form-group">
             <span class="control-label col-md-2">День недели</span>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DaysId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("DaysId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.DaysId, "", new { @class = "text-danger" })
             </div>
         </div>

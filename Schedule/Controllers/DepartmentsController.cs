@@ -10,111 +10,107 @@ using Schedule.Models;
 
 namespace Schedule.Controllers
 {
-    public class ParasController : Controller
+    public class DepartmentsController : Controller
     {
         private ScheduleContex db = new ScheduleContex();
 
-        // GET: Paras
+        // GET: Departments
         public ActionResult Index()
         {
-            var par = db.Paras.Include(o => o.Day);
-            return View(db.Paras.ToList());
+            return View(db.Departments.ToList());
         }
 
-        // GET: Paras/Details/5
+        // GET: Departments/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Para para = db.Paras.Find(id);
-            if (para == null)
+            Department department = db.Departments.Find(id);
+            if (department == null)
             {
                 return HttpNotFound();
             }
-            return View(para);
+            return View(department);
         }
 
-        // GET: Paras/Create
+        // GET: Departments/Create
         public ActionResult Create()
         {
-            ViewBag.DaysId = new SelectList(db.Days, "Id", "Name");
             return View();
         }
 
-        // POST: Paras/Create
+        // POST: Departments/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Number,DaysId")] Para para)
+        public ActionResult Create([Bind(Include = "Id,Name")] Department department)
         {
             if (ModelState.IsValid)
             {
-                db.Paras.Add(para);
+                db.Departments.Add(department);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DaysId = new SelectList(db.Days, "Id", "Name", para.DaysId);
-            return View(para);
+
+            return View(department);
         }
 
-        // GET: Paras/Edit/5
+        // GET: Departments/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Para para = db.Paras.Find(id);
-            if (para == null)
+            Department department = db.Departments.Find(id);
+            if (department == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.DaysId = new SelectList(db.Days, "Id", "Name");
-            return View(para);
+            return View(department);
         }
 
-        // POST: Paras/Edit/5
+        // POST: Departments/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Number,DaysId")] Para para)
+        public ActionResult Edit([Bind(Include = "Id,Name")] Department department)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(para).State = EntityState.Modified;
+                db.Entry(department).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DaysId = new SelectList(db.Days, "Id", "Name", para.DaysId);
-            return View(para);
+            return View(department);
         }
 
-        // GET: Paras/Delete/5
+        // GET: Departments/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Para para = db.Paras.Find(id);
-            if (para == null)
+            Department department = db.Departments.Find(id);
+            if (department == null)
             {
                 return HttpNotFound();
             }
-            return View(para);
+            return View(department);
         }
 
-        // POST: Paras/Delete/5
+        // POST: Departments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Para para = db.Paras.Find(id);
-            db.Paras.Remove(para);
+            Department department = db.Departments.Find(id);
+            db.Departments.Remove(department);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

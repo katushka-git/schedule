@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+.btn {
+    outline: none;
+    border: 0px;
+    box-sizing: none;
+    background-color: transparent;
+    }

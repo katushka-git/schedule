@@ -24,7 +24,7 @@
             @Html.DisplayFor(modelItem => item.Number)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DaysId)
+            @Html.DisplayFor(modelItem => item.Day.Name)
         </td>
         <td>
             @Html.ActionLink("Изменить", "Edit", new { id = item.Id }) |

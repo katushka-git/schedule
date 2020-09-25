@@ -1,8 +1,5 @@
 ﻿@model Schedule.Models.ScheduleTable
 
-@{
-    Layout = null;
-}
 
 <!DOCTYPE html>
 
@@ -13,11 +10,11 @@
 </head>
 <body>
     <div>
-        <h4>ScheduleTable</h4>
+      
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.CallSheduleId)
+                Время
             </dt>
     
             <dd>
@@ -25,7 +22,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.ParaId)
+                № пары
             </dt>
     
             <dd>
@@ -33,7 +30,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.RoomId)
+                Аудитория
             </dt>
     
             <dd>
@@ -41,7 +38,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.SubjectId)
+                Дисциплина
             </dt>
     
             <dd>
@@ -49,7 +46,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.GroupId)
+                Группа
             </dt>
     
             <dd>
@@ -57,7 +54,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.TeacherId)
+                Преподаватель
             </dt>
     
             <dd>
@@ -67,8 +64,8 @@
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Изменить", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Назад", "Index")
     </p>
 </body>
 </html>

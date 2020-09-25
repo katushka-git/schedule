@@ -197,6 +197,14 @@
     <Compile Include="Migrations\202009201741341_m10.designer.cs">
       <DependentUpon>202009201741341_m10.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009250724044_Addplayer.cs" />
+    <Compile Include="Migrations\202009250724044_Addplayer.designer.cs">
+      <DependentUpon>202009250724044_Addplayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009250725471_r1.cs" />
+    <Compile Include="Migrations\202009250725471_r1.designer.cs">
+      <DependentUpon>202009250725471_r1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CallShedule.cs" />
     <Compile Include="Models\Day.cs" />
@@ -215,12 +223,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\212.jpg" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\econom.png" />
+    <Content Include="Content\econom2.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -451,6 +462,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009201741341_m10.resx">
       <DependentUpon>202009201741341_m10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009250724044_Addplayer.resx">
+      <DependentUpon>202009250724044_Addplayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009250725471_r1.resx">
+      <DependentUpon>202009250725471_r1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

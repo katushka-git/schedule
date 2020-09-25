@@ -19,7 +19,7 @@ namespace Schedule.Models
         public DbSet<ScheduleTable> ScheduleTables{ get; set; }
         public DbSet <Position> Positions { get; set; }
         public DbSet<Department> Departments { get; set; }
-
+       
 
     }
 }

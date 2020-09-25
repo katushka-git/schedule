@@ -1,9 +1,5 @@
 ﻿@model Schedule.Models.ScheduleTable
 
-@{
-    Layout = null;
-}
-
 <!DOCTYPE html>
 
 <html>
@@ -12,13 +8,12 @@
     <title>Delete</title>
 </head>
 <body>
-    <h3>Are you sure you want to delete this?</h3>
+    <h3>Вы действительно хотите удалить это?</h3>
     <div>
-        <h4>ScheduleTable</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.CallSheduleId)
+                Время
             </dt>
     
             <dd>
@@ -26,7 +21,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.ParaId)
+               № пары
             </dt>
     
             <dd>
@@ -34,7 +29,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.RoomId)
+                Аудитория
             </dt>
     
             <dd>
@@ -42,7 +37,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.SubjectId)
+                Дисциплина
             </dt>
     
             <dd>
@@ -50,7 +45,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.GroupId)
+               Группа
             </dt>
     
             <dd>
@@ -58,7 +53,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.TeacherId)
+                Преподаватель
             </dt>
     
             <dd>
@@ -71,8 +66,8 @@
             @Html.AntiForgeryToken()
     
             <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
+                <input type="submit" value="Удалить" class="btn btn-primary" /> |
+                @Html.ActionLink("Назад", "Index")
             </div>
         }
     </div>

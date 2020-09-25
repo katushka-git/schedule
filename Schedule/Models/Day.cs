@@ -9,7 +9,7 @@ namespace Schedule.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public IEnumerable<Para> Paras { get; set; }
+        public ICollection <Para> Paras { get; set; }
         public Day ()
         {
             Paras = new List<Para>();

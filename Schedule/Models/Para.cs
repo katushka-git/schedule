@@ -9,7 +9,7 @@ namespace Schedule.Models
     {
         public int Id { get; set; }
         public int Number { get; set; }
-        public int? DaysId { get; set; }
+        public int DayId { get; set; }
         public Day Day { get; set; }
     }
 }

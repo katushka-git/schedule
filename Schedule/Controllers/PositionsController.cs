@@ -11,18 +11,18 @@ using Schedule.Models;
 
 namespace Schedule.Controllers
 {
-    public class DepartmentsController : Controller
+    public class PositionsController : Controller
     {
         private ScheduleContex db = new ScheduleContex();
 
         public async Task<ActionResult> Index(int page = 1)
         {
-            var departments = db.Departments.ToList();
+            var positions = db.Positions.ToList();
             int pageSize = 3; // количество объектов на страницу
-            IEnumerable<Department> clientPerPages = departments.Skip((page - 1) * pageSize).Take(pageSize);
+            //IEnumerable<Department> clientPerPages = positions.Skip((page - 1) * pageSize).Take(pageSize);
             //PageInfo pageInfo = new PageInfo { PageNumber = page, PageSize = pageSize, TotalItems = clients.Count };
             //IndexViewModel2 ivm = new IndexViewModel2 { PageInfo = pageInfo, Client = clientPerPages };
-            return View(departments);
+            return View(positions);
         }
 
 
@@ -33,12 +33,12 @@ namespace Schedule.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Department department = await db.Departments.FindAsync(id);
-            if (department == null)
+            Position positions = await db.Positions.FindAsync(id);
+            if (positions == null)
             {
                 return HttpNotFound();
             }
-            return View(department);
+            return View(positions);
         }
 
         // GET: Clients/Create
@@ -52,16 +52,16 @@ namespace Schedule.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Name")] Department department)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Name")] Position position)
         {
             if (ModelState.IsValid)
             {
-                db.Departments.Add(department);
+                db.Positions.Add(position);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(department);
+            return View(position);
         }
 
         // GET: Clients/Edit/5
@@ -71,12 +71,12 @@ namespace Schedule.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Department department = await db.Departments.FindAsync(id);
-            if (department == null)
+           Position position = await db.Positions.FindAsync(id);
+            if (position == null)
             {
                 return HttpNotFound();
             }
-            return View(department);
+            return View(position);
         }
 
         // POST: Clients/Edit/5
@@ -84,15 +84,15 @@ namespace Schedule.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Name")] Department department)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Name")] Position position)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(department).State = EntityState.Modified;
+                db.Entry(position).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(department);
+            return View(position);
         }
 
         // GET: Clients/Delete/5
@@ -102,12 +102,12 @@ namespace Schedule.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Department department = await db.Departments.FindAsync(id);
-            if (department == null)
+            Position position = await db.Positions.FindAsync(id);
+            if (position == null)
             {
                 return HttpNotFound();
             }
-            return View(department);
+            return View(position);
         }
 
         // POST: Clients/Delete/5
@@ -115,8 +115,8 @@ namespace Schedule.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Department department = await db.Departments.FindAsync(id);
-            db.Departments.Remove(department);
+            Position position = await db.Positions.FindAsync(id);
+            db.Positions.Remove(position);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
@@ -130,5 +130,4 @@ namespace Schedule.Controllers
             base.Dispose(disposing);
         }
     }
-    }
-
+}

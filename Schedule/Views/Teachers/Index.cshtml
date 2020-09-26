@@ -12,12 +12,12 @@
 <table class="table">
     <tr>
         <th>
-            @*@Html.DisplayNameFor(model => model.FIO)*@
+            
             ФИО
         </th>
-        <th>
+        @*<th>
            Дисциплина
-        </th>
+        </th>*@
         <th>
            Ученая степень
         </th>
@@ -32,14 +32,14 @@
         <td>
             @Html.DisplayFor(modelItem => item.FIO)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.SubjectId)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Position.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Position)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Department)
+            @Html.DisplayFor(modelItem => item.Department.Name)
         </td>
         <td>
             @Html.ActionLink("Изменить", "Edit", new { id=item.Id }) |

@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Schedule.Models;
@@ -15,20 +16,20 @@ namespace Schedule.Controllers
         private ScheduleContex db = new ScheduleContex();
 
         // GET: Teachers
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            //var tea = db.Teachers.Include(x=>x.Subjects);
-            return View(db.Teachers.ToList());
+            var ts = db.Teachers.Include(o => o.Department).Include(o => o.Position);
+            return View(await ts.ToListAsync());
         }
 
-        // GET: Teachers/Details/5
-        public ActionResult Details(int? id)
+        // GET: Orders/Details/5
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Teacher teacher = db.Teachers.Find(id);
+            Teacher teacher = await db.Teachers.FindAsync(id);
             if (teacher == null)
             {
                 return HttpNotFound();
@@ -36,79 +37,78 @@ namespace Schedule.Controllers
             return View(teacher);
         }
 
-        // GET: Teachers/Create
+        // GET: Orders/Create
         public ActionResult Create()
         {
-            ViewBag.SubjectId = new SelectList(db.Subjects, "Id", "Name");
-            ViewBag.PosistionId = new SelectList(db.Positions, "Id", "Name");
             ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name");
+            ViewBag.PositionId = new SelectList(db.Positions, "Id", "Name");
             return View();
         }
 
-        // POST: Teachers/Create
+        // POST: Orders/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FIO,Subject,Position,Department")] Teacher teacher)
+        public async Task<ActionResult> Create([Bind(Include = "Id,FIO,DepartmentId,PositionId ")] Teacher teacher)
         {
             if (ModelState.IsValid)
             {
+
                 db.Teachers.Add(teacher);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewBag.SubjectId = new SelectList(db.Subjects, "Id", "Name", teacher.SubjectId);
-            ViewBag.PosistionId = new SelectList(db.Positions, "Id", "Name", teacher.PositionId);
+
             ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name", teacher.DepartmentId);
+            ViewBag.PositionId = new SelectList(db.Positions, "Id", "Name", teacher.PositionId);
+
             return View(teacher);
         }
 
-        // GET: Teachers/Edit/5
-        public ActionResult Edit(int? id)
+        // GET: Orders/Edit/5
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Teacher teacher = db.Teachers.Find(id);
+            Teacher teacher = await db.Teachers.FindAsync(id);
             if (teacher == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.SubjectId = new SelectList(db.Subjects, "Id", "Name");
-            ViewBag.PosistionId = new SelectList(db.Positions, "Id", "Name");
-            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name");
+            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name", teacher.DepartmentId);
+            ViewBag.PositionId = new SelectList(db.Positions, "Id", "Name", teacher.PositionId);
             return View(teacher);
         }
 
-        // POST: Teachers/Edit/5
+        // POST: Orders/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FIO,Subject,Position,Department")] Teacher teacher)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,FIO,DepartmentId,PositionId ")] Teacher teacher)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(teacher).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewBag.SubjectId = new SelectList(db.Subjects, "Id", "Name", teacher.SubjectId);
-            ViewBag.PosistionId = new SelectList(db.Positions, "Id", "Name", teacher.PositionId);
             ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "Name", teacher.DepartmentId);
+            ViewBag.PositionId = new SelectList(db.Positions, "Id", "Name", teacher.PositionId);
             return View(teacher);
         }
 
-        // GET: Teachers/Delete/5
-        public ActionResult Delete(int? id)
+        // GET: Orders/Delete/5
+        public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Teacher teacher = db.Teachers.Find(id);
+            Teacher teacher = await db.Teachers.FindAsync(id);
             if (teacher == null)
             {
                 return HttpNotFound();
@@ -116,14 +116,14 @@ namespace Schedule.Controllers
             return View(teacher);
         }
 
-        // POST: Teachers/Delete/5
+        // POST: Orders/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Teacher teacher = db.Teachers.Find(id);
+            Teacher teacher = await db.Teachers.FindAsync(id);
             db.Teachers.Remove(teacher);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 

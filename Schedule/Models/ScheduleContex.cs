@@ -8,9 +8,12 @@ namespace Schedule.Models
 {
     public class ScheduleContex : DbContext
     {
+        public ScheduleContex()
+              : base("Schedule")
+        { }
         public DbSet<Day> Days { get; set; }
-        public DbSet<CallShedule> CallShedules { get; set; }
         public DbSet<Para> Paras { get; set; }
+        public DbSet<CallShedule> CallShedules { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Room> Rooms{ get; set; }

@@ -9,7 +9,7 @@ namespace Schedule.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public IEnumerable<Teacher> Teachers { get; set; }
+        public ICollection<Teacher> Teachers { get; set; }
         public Position()
         {
             Teachers = new List<Teacher>();

@@ -145,6 +145,7 @@
     <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ParasController.cs" />
+    <Compile Include="Controllers\PositionsController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\ScheduleTablesController.cs" />
     <Compile Include="Controllers\SubjectsController.cs" />
@@ -204,6 +205,26 @@
     <Compile Include="Migrations\202009250725471_r1.cs" />
     <Compile Include="Migrations\202009250725471_r1.designer.cs">
       <DependentUpon>202009250725471_r1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009251046344_r2.cs" />
+    <Compile Include="Migrations\202009251046344_r2.designer.cs">
+      <DependentUpon>202009251046344_r2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009261139346_m12.cs" />
+    <Compile Include="Migrations\202009261139346_m12.designer.cs">
+      <DependentUpon>202009261139346_m12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009261153096_m14.cs" />
+    <Compile Include="Migrations\202009261153096_m14.designer.cs">
+      <DependentUpon>202009261153096_m14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009261319055_m15.cs" />
+    <Compile Include="Migrations\202009261319055_m15.designer.cs">
+      <DependentUpon>202009261319055_m15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009261554325_m16.cs" />
+    <Compile Include="Migrations\202009261554325_m16.designer.cs">
+      <DependentUpon>202009261554325_m16.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CallShedule.cs" />
@@ -414,6 +435,11 @@
     <Content Include="Views\CallShedules\Details.cshtml" />
     <Content Include="Views\CallShedules\Edit.cshtml" />
     <Content Include="Views\CallShedules\Index.cshtml" />
+    <Content Include="Views\Positions\Create.cshtml" />
+    <Content Include="Views\Positions\Delete.cshtml" />
+    <Content Include="Views\Positions\Details.cshtml" />
+    <Content Include="Views\Positions\Edit.cshtml" />
+    <Content Include="Views\Positions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -468,6 +494,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009250725471_r1.resx">
       <DependentUpon>202009250725471_r1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009251046344_r2.resx">
+      <DependentUpon>202009251046344_r2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009261139346_m12.resx">
+      <DependentUpon>202009261139346_m12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009261153096_m14.resx">
+      <DependentUpon>202009261153096_m14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009261319055_m15.resx">
+      <DependentUpon>202009261319055_m15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009261554325_m16.resx">
+      <DependentUpon>202009261554325_m16.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

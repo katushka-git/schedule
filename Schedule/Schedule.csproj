@@ -226,6 +226,10 @@
     <Compile Include="Migrations\202009261554325_m16.designer.cs">
       <DependentUpon>202009261554325_m16.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009261628409_m17.cs" />
+    <Compile Include="Migrations\202009261628409_m17.designer.cs">
+      <DependentUpon>202009261628409_m17.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CallShedule.cs" />
     <Compile Include="Models\Day.cs" />
@@ -509,6 +513,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009261554325_m16.resx">
       <DependentUpon>202009261554325_m16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009261628409_m17.resx">
+      <DependentUpon>202009261628409_m17.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

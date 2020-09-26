@@ -15,7 +15,10 @@ namespace Schedule.Models
         public int Coursework { get; set; }
         public int Exam { get; set; }
         public int Consultation { get; set; }
-        public int Total { get; set; }
+        public int Total
+        {
+            get { return Lecture + Control + Practical + Coursework + Exam + Consultation; }
+        }
         public IEnumerable<Subject> Subjects { get; set; }
         public UPlan()
         {

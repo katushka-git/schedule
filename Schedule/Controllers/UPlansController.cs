@@ -38,7 +38,6 @@ namespace Schedule.Controllers
         // GET: UPlans/Create
         public ActionResult Create()
         {
-            ViewBag.SubjectId = new SelectList(db.Subjects, "Id", "Name");
             return View();
         }
 
@@ -47,7 +46,7 @@ namespace Schedule.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,SubjectId,Lecture,Control,Practical,Coursework,Exam,Consultation,Total")] UPlan uPlan)
+        public ActionResult Create([Bind(Include = "Id,Lecture,Control,Practical,Labor,Coursework,Exam,Zachet,Consultation")] UPlan uPlan)
         {
             if (ModelState.IsValid)
             {
@@ -55,7 +54,7 @@ namespace Schedule.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.SubjectId= new SelectList(db.Subjects, "Id", "Name", uPlan.SubjectId);
+
             return View(uPlan);
         }
 
@@ -79,7 +78,7 @@ namespace Schedule.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,SubjectId,Lecture,Control,Practical,Coursework,Exam,Consultation,Total")] UPlan uPlan)
+        public ActionResult Edit([Bind(Include = "Id,Lecture,Control,Practical,Labor,Coursework,Exam,Zachet,Consultation")] UPlan uPlan)
         {
             if (ModelState.IsValid)
             {

@@ -25,6 +25,6 @@ textarea {
 .btn {
     outline: none;
     border: 0px;
-    box-sizing: none;
+    /box-sizing: none;*/
     background-color: transparent;
     }

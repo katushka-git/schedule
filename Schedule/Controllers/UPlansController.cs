@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Schedule.Models;
@@ -15,11 +16,15 @@ namespace Schedule.Controllers
         private ScheduleContex db = new ScheduleContex();
 
         // GET: UPlans
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    return View(db.UPlans.ToList());
+        //}
+        public async Task<ActionResult> Index()
         {
-            return View(db.UPlans.ToList());
+            var plans = db.UPlans.Include(o => o.Subjects);
+            return View(await plans.ToListAsync());
         }
-
         // GET: UPlans/Details/5
         public ActionResult Details(int? id)
         {
@@ -46,7 +51,7 @@ namespace Schedule.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Lecture,Control,Practical,Labor,Coursework,Exam,Zachet,Consultation")] UPlan uPlan)
+        public ActionResult Create([Bind(Include = "Id,Lecture,Control,Practical,Labor,Coursework,Exam,Zachet,Consultation, NameS")] UPlan uPlan)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +83,7 @@ namespace Schedule.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Lecture,Control,Practical,Labor,Coursework,Exam,Zachet,Consultation")] UPlan uPlan)
+        public ActionResult Edit([Bind(Include = "Id,Lecture,Control,Practical,Labor,Coursework,Exam,Zachet,Consultation, NameS")] UPlan uPlan)
         {
             if (ModelState.IsValid)
             {

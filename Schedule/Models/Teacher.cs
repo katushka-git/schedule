@@ -13,11 +13,6 @@ namespace Schedule.Models
         public Department Department { get; set; }
         public int PositionId { get; set; }
         public Position Position { get; set; }
-        public ICollection<ScheduleTable> ScheduleTables { get; set; }
 
-        public Teacher()
-        {
-            ScheduleTables = new List<ScheduleTable>();
-        }
     }
 }

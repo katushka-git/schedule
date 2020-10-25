@@ -12,11 +12,5 @@ namespace Schedule.Models
         public Teacher Teacher { get; set; }
         public int UPlanId { get; set; }
         public UPlan UPlan { get; set; }
-        public ICollection<ScheduleTable> ScheduleTables { get; set; }
-
-        public Subject()
-        {
-            ScheduleTables = new List<ScheduleTable>();
-        }
     }
 }

@@ -5,11 +5,11 @@ using System.Web;
 
 namespace Schedule.Models
 {
-    public class Room
+    public class CallShedule
     {
         public int Id { get; set; }
-        public int Number { get; set; }
-        //вместимость 
-        public int Capacity { get; set; }
+        public int NamberPar { get; set; }
+        public int Start { get; set; }
+        public int Finish { get; set; }
     }
 }

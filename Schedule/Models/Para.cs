@@ -9,12 +9,7 @@ namespace Schedule.Models
     {
         public int Id { get; set; }
         public int Number { get; set; }
-        
-        public ICollection<ScheduleTable> ScheduleTables { get; set; }
-
-        public Para()
-        {
-            ScheduleTables = new List<ScheduleTable>();
-        }
+        public int DayId { get; set; }
+        public Day Day { get; set; }
     }
 }

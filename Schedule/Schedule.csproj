@@ -234,6 +234,18 @@
     <Compile Include="Migrations\202009261649554_m18.designer.cs">
       <DependentUpon>202009261649554_m18.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010241008249_m20.cs" />
+    <Compile Include="Migrations\202010241008249_m20.designer.cs">
+      <DependentUpon>202010241008249_m20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010251112450_m21-addDay.cs" />
+    <Compile Include="Migrations\202010251112450_m21-addDay.designer.cs">
+      <DependentUpon>202010251112450_m21-addDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010251130011_m22-addDay.cs" />
+    <Compile Include="Migrations\202010251130011_m22-addDay.designer.cs">
+      <DependentUpon>202010251130011_m22-addDay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CallShedule.cs" />
     <Compile Include="Models\Day.cs" />
@@ -523,6 +535,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009261649554_m18.resx">
       <DependentUpon>202009261649554_m18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010241008249_m20.resx">
+      <DependentUpon>202010241008249_m20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010251112450_m21-addDay.resx">
+      <DependentUpon>202010251112450_m21-addDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010251130011_m22-addDay.resx">
+      <DependentUpon>202010251130011_m22-addDay.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

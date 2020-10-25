@@ -8,6 +8,8 @@ namespace Schedule.Models
     public class ScheduleTable
         {
         public int  Id { get; set; }
+        public int DayId { get; set; }
+        public Day Day { get; set; }
         public int CallSheduleId { get; set; }
         public CallShedule CallShedule { get; set; }
         public int ParaId { get; set; }

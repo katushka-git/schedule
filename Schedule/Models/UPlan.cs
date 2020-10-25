@@ -16,6 +16,7 @@ namespace Schedule.Models
         public int Exam { get; set; }
         public int Zachet { get; set; }
         public int Consultation { get; set; }
+        public string NameSubject { get; set; }
         public int Total
         {
             get { return Lecture + Control + Practical + Coursework + Exam + Consultation+ Labor+ Zachet; }

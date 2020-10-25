@@ -18,7 +18,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.UPlan.NameSubject)
         </td>
         <td>
             @Html.ActionLink("Изменить", "Edit", new { id = item.Id }) |

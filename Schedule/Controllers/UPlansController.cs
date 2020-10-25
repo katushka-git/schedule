@@ -51,7 +51,7 @@ namespace Schedule.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Lecture,Control,Practical,Labor,Coursework,Exam,Zachet,Consultation, NameS")] UPlan uPlan)
+        public ActionResult Create([Bind(Include = "Id,Lecture,Control,Practical,Labor,Coursework,Exam,Zachet,Consultation, NameSubject")] UPlan uPlan)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace Schedule.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Lecture,Control,Practical,Labor,Coursework,Exam,Zachet,Consultation, NameS")] UPlan uPlan)
+        public ActionResult Edit([Bind(Include = "Id,Lecture,Control,Practical,Labor,Coursework,Exam,Zachet,Consultation, NameSubject")] UPlan uPlan)
         {
             if (ModelState.IsValid)
             {

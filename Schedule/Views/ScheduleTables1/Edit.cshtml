@@ -1,43 +1,40 @@
 ﻿@model Schedule.Models.ScheduleTable
 
-<!DOCTYPE html>
+@{
+    ViewBag.Title = "Edit";
+}
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
     
-</head>
-<body>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    
-    
-    @using (Html.BeginForm()) 
-    {
-        @Html.AntiForgeryToken()
-        
     <div class="form-horizontal">
-        <h4>Расписание</h4>
+        <h4>ScheduleTable</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
         <div class="form-group">
-            @Html.LabelFor(model => model.DayId, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.DayId, "DayId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("DayId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.DayId, "", new { @class = "text-danger" })
             </div>
         </div>
-        
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.CallSheduleId, htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CallSheduleId, "CallSheduleId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("CallSheduleId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CallSheduleId, "", new { @class = "text-danger" })
             </div>
-        </div>*@
+        </div>
 
         <div class="form-group">
-            <span class="control-label col-md-2">№ пары</span>
+            @Html.LabelFor(model => model.ParaId, "ParaId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("ParaId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ParaId, "", new { @class = "text-danger" })
@@ -45,7 +42,7 @@
         </div>
 
         <div class="form-group">
-            <span class="control-label col-md-2">Аудитория</span>
+            @Html.LabelFor(model => model.RoomId, "RoomId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("RoomId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.RoomId, "", new { @class = "text-danger" })
@@ -53,7 +50,7 @@
         </div>
 
         <div class="form-group">
-            <span class="control-label col-md-2">Дисциплина</span>
+            @Html.LabelFor(model => model.SubjectId, "SubjectId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("SubjectId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.SubjectId, "", new { @class = "text-danger" })
@@ -61,7 +58,7 @@
         </div>
 
         <div class="form-group">
-            <span class="control-label col-md-2">Группа</span>
+            @Html.LabelFor(model => model.GroupId, "GroupId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("GroupId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.GroupId, "", new { @class = "text-danger" })
@@ -69,7 +66,7 @@
         </div>
 
         <div class="form-group">
-            <span class="control-label col-md-2">Преподаватель</span>
+            @Html.LabelFor(model => model.TeacherId, "TeacherId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("TeacherId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.TeacherId, "", new { @class = "text-danger" })
@@ -78,14 +75,16 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Добавить" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>
-    }
-    
-    <div>
-        @Html.ActionLink("Назад", "Index")
-    </div>
-</body>
-</html>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -63,7 +63,7 @@ namespace Schedule.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.UPlan = new SelectList(db.UPlans, "Id", "NameSubject", subject.UPlanId);
+            ViewBag.UPlanId = new SelectList(db.UPlans, "Id", "NameSubject", subject.UPlanId);
 
             return View(subject);
         }

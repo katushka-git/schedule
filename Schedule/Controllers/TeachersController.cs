@@ -7,6 +7,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 using Schedule.Models;
 
 namespace Schedule.Controllers
@@ -16,12 +17,17 @@ namespace Schedule.Controllers
         private ScheduleContex db = new ScheduleContex();
 
         // GET: Teachers
-        public async Task<ActionResult> Index()
+        //public async Task<ActionResult> Index()
+        //{
+        //    var ts = db.Teachers.Include(o => o.Department).Include(o => o.Position).OrderBy(x=>x.Department);
+        //    return View(await ts.ToListAsync());
+        //}
+        public ActionResult Index(int? page)
         {
-            var ts = db.Teachers.Include(o => o.Department).Include(o => o.Position);
-            return View(await ts.ToListAsync());
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+            return View(db.Teachers.Include(o => o.Department).Include(o => o.Position).OrderBy(x=>x.DepartmentId).ToPagedList(pageNumber, pageSize));
         }
-
         // GET: Orders/Details/5
         public async Task<ActionResult> Details(int? id)
         {

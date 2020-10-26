@@ -18,10 +18,7 @@ namespace Schedule.Controllers
         public async Task<ActionResult> Index(int page = 1)
         {
             var positions = db.Positions.ToList();
-            int pageSize = 3; // количество объектов на страницу
-            //IEnumerable<Department> clientPerPages = positions.Skip((page - 1) * pageSize).Take(pageSize);
-            //PageInfo pageInfo = new PageInfo { PageNumber = page, PageSize = pageSize, TotalItems = clients.Count };
-            //IndexViewModel2 ivm = new IndexViewModel2 { PageInfo = pageInfo, Client = clientPerPages };
+            
             return View(positions);
         }
 

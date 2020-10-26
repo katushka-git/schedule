@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 using Schedule.Models;
 
 namespace Schedule.Controllers
@@ -15,9 +16,11 @@ namespace Schedule.Controllers
         private ScheduleContex db = new ScheduleContex();
 
         // GET: Groups
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View(db.Groups.ToList());
+            int pageSize = 8;
+            int pageNumber = (page ?? 1);
+            return View(db.Groups.OrderBy(x=>x.Id).ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Groups/Details/5

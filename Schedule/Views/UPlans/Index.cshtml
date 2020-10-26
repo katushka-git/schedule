@@ -13,10 +13,7 @@
         <th style="width: 8%">
             Лек
         </th>
-        @*<th style="width: 8%">
-            
-        </th>*@
-        <th style="width: 8%">
+       <th style="width: 8%">
             Пр
         </th>
         <th style="width: 8%">
@@ -31,14 +28,12 @@
         <th style="width: 8%">
             З
         </th>
-        <th style="width: 8%">
-            ЗаО
-        </th>
+       
         <th style="width: 8%">Всего</th>
         <th style="width: 10%"></th>
     </tr>
     
-<h4>401</h4>
+<h4>ЭФ17ЭБ62ДР1</h4>
 @foreach (var item in Model) {
     <tr>
         <td style="text-align:inherit">
@@ -47,10 +42,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Lecture)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Control)
-        </td>
-        <td>
+         <td>
             @Html.DisplayFor(modelItem => item.Practical)
         </td>
         <td>
@@ -72,83 +64,10 @@
             @Html.DisplayFor(modelItem => item.Total)
         </td>
         <td>
-            @Html.ActionLink("Изменить", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Изменить", "Edit", new { id = item.Id }) 
             @*@Html.ActionLink("Подробнее", "Details", new { id = item.Id }) |*@
             @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
         </td>
     </tr>
 }
-</table>
-<table class="table">
-    <tr>
-        <th style="width: 10%;">Дисциплины</th>
-        <th style="width: 8%">
-            Лек
-        </th>
-        @*<th style="width: 8%">
-
-            </th>*@
-        <th style="width: 8%">
-            Пр
-        </th>
-        <th style="width: 8%">
-            Лаб
-        </th>
-        <th style="width: 8%">
-            КР
-        </th>
-        <th style="width: 8%">
-            Экз
-        </th>
-        <th style="width: 8%">
-            З
-        </th>
-        <th style="width: 8%">
-            ЗаО
-        </th>
-        <th style="width: 8%">Всего</th>
-        <th style="width: 10%"></th>
-    </tr>
-    
-    <h4>402</h4>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td style="text-align:inherit">
-                @Html.DisplayFor(modelItem => item.Subjects)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Lecture)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Control)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Practical)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Labor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Coursework)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Exam)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Zachet)
-            </td>
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.Consultation)
-                </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.Total)
-            </td>
-            <td>
-                @Html.ActionLink("Изменить", "Edit", new { id = item.Id }) |
-                @*@Html.ActionLink("Подробнее", "Details", new { id = item.Id }) |*@
-                @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
 </table>

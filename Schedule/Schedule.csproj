@@ -153,7 +153,7 @@
     <Compile Include="Controllers\ParasController.cs" />
     <Compile Include="Controllers\PositionsController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
-    <Compile Include="Controllers\ScheduleTables2Controller.cs" />
+    <Compile Include="Controllers\ScheduleTables3Controller.cs" />
     <Compile Include="Controllers\ScheduleTablesController.cs" />
     <Compile Include="Controllers\SubjectsController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
@@ -476,11 +476,11 @@
     <Content Include="Views\UPlans\Details.cshtml" />
     <Content Include="Views\UPlans\Edit.cshtml" />
     <Content Include="Views\UPlans\Index.cshtml" />
-    <Content Include="Views\ScheduleTables2\Create.cshtml" />
-    <Content Include="Views\ScheduleTables2\Delete.cshtml" />
-    <Content Include="Views\ScheduleTables2\Details.cshtml" />
-    <Content Include="Views\ScheduleTables2\Edit.cshtml" />
-    <Content Include="Views\ScheduleTables2\Index.cshtml" />
+    <Content Include="Views\ScheduleTables3\Create.cshtml" />
+    <Content Include="Views\ScheduleTables3\Delete.cshtml" />
+    <Content Include="Views\ScheduleTables3\Details.cshtml" />
+    <Content Include="Views\ScheduleTables3\Edit.cshtml" />
+    <Content Include="Views\ScheduleTables3\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

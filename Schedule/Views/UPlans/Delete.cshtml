@@ -4,15 +4,21 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
+<h3>Вы действительно хоите удалить?</h3>
 <div>
-    <h4>UPlan</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Lecture)
+            Дисциплина
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameSubject)
+        </dd>
+
+        <dt>
+            Лекции
         </dt>
 
         <dd>
@@ -20,15 +26,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Control)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Control)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Practical)
+           Практические работы
         </dt>
 
         <dd>
@@ -36,7 +34,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Labor)
+            Лабораторные работы
         </dt>
 
         <dd>
@@ -44,7 +42,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Coursework)
+            Курсовая работа
         </dt>
 
         <dd>
@@ -52,7 +50,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Exam)
+            Экзамен
         </dt>
 
         <dd>
@@ -60,20 +58,20 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Zachet)
+            Зачет
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Zachet)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.Consultation)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Consultation)
-        </dd>
+        </dd>*@
 
     </dl>
 
@@ -81,8 +79,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Удалить" class="btn btn-primary" /> |
+            @Html.ActionLink("Назад", "Index")
         </div>
     }
 </div>

@@ -10,18 +10,18 @@ using Schedule.Models;
 
 namespace Schedule.Controllers
 {
-    public class ScheduleTables2Controller : Controller
+    public class ScheduleTables3Controller : Controller
     {
         private ScheduleContex db = new ScheduleContex();
 
-        // GET: ScheduleTables2
+        // GET: ScheduleTables3
         public ActionResult Index()
         {
             var scheduleTables = db.ScheduleTables.Include(s => s.CallShedule).Include(s => s.Day).Include(s => s.Group).Include(s => s.Para).Include(s => s.Room).Include(s => s.Subject).Include(s => s.Teacher);
             return View(scheduleTables.ToList());
         }
 
-        // GET: ScheduleTables2/Details/5
+        // GET: ScheduleTables3/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,20 +36,20 @@ namespace Schedule.Controllers
             return View(scheduleTable);
         }
 
-        // GET: ScheduleTables2/Create
+        // GET: ScheduleTables3/Create
         public ActionResult Create()
         {
-            ViewBag.CallSheduleId = new SelectList(db.CallShedules, "Id", "Id");
+            ViewBag.CallSheduleId = new SelectList(db.CallShedules, "Id", "NamberPar");
             ViewBag.DayId = new SelectList(db.Days, "Id", "Name");
-            ViewBag.GroupId = new SelectList(db.Groups, "Id", "Specialty");
+            ViewBag.GroupId = new SelectList(db.Groups, "Id", "Number");
             ViewBag.ParaId = new SelectList(db.Paras, "Id", "Id");
-            ViewBag.RoomId = new SelectList(db.Rooms, "Id", "Id");
+            ViewBag.RoomId = new SelectList(db.Rooms, "Id", "Number");
             ViewBag.SubjectId = new SelectList(db.Subjects, "Id", "Id");
             ViewBag.TeacherId = new SelectList(db.Teachers, "Id", "FIO");
             return View();
         }
 
-        // POST: ScheduleTables2/Create
+        // POST: ScheduleTables3/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -73,7 +73,7 @@ namespace Schedule.Controllers
             return View(scheduleTable);
         }
 
-        // GET: ScheduleTables2/Edit/5
+        // GET: ScheduleTables3/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -87,15 +87,15 @@ namespace Schedule.Controllers
             }
             ViewBag.CallSheduleId = new SelectList(db.CallShedules, "Id", "Id", scheduleTable.CallSheduleId);
             ViewBag.DayId = new SelectList(db.Days, "Id", "Name", scheduleTable.DayId);
-            ViewBag.GroupId = new SelectList(db.Groups, "Id", "Specialty", scheduleTable.GroupId);
+            ViewBag.GroupId = new SelectList(db.Groups, "Id", "Number", scheduleTable.GroupId);
             ViewBag.ParaId = new SelectList(db.Paras, "Id", "Id", scheduleTable.ParaId);
-            ViewBag.RoomId = new SelectList(db.Rooms, "Id", "Id", scheduleTable.RoomId);
+            ViewBag.RoomId = new SelectList(db.Rooms, "Id", "Number", scheduleTable.RoomId);
             ViewBag.SubjectId = new SelectList(db.Subjects, "Id", "Id", scheduleTable.SubjectId);
             ViewBag.TeacherId = new SelectList(db.Teachers, "Id", "FIO", scheduleTable.TeacherId);
             return View(scheduleTable);
         }
 
-        // POST: ScheduleTables2/Edit/5
+        // POST: ScheduleTables3/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -118,7 +118,7 @@ namespace Schedule.Controllers
             return View(scheduleTable);
         }
 
-        // GET: ScheduleTables2/Delete/5
+        // GET: ScheduleTables3/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -133,7 +133,7 @@ namespace Schedule.Controllers
             return View(scheduleTable);
         }
 
-        // POST: ScheduleTables2/Delete/5
+        // POST: ScheduleTables3/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
